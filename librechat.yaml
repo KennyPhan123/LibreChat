@@ -1,0 +1,149 @@
+version: 1.0.0
+endpoints:
+  custom:
+    # Claude 3.7 Sonnet - Regular
+    - name: "Claude 3.7 Sonnet"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      iconURL: "/images/notchatgpt.png"
+      models:
+        fetch: false
+        default: ["claude-3.7-sonnet@anthropic"]
+      modelDisplayLabel: "Claude 3.7 Sonnet"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+      headers:
+        Authorization: "Bearer ${UNIFY_API_KEY}"
+
+    # Claude 3.7 Sonnet - With Thinking
+    - name: "Claude 3.7 Sonnet Thinking"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      iconURL: "/images/notchatgpt.png"
+      models:
+        fetch: false
+        default: ["claude-3.7-sonnet@anthropic"]
+      modelDisplayLabel: "Claude 3.7 Sonnet Thinking"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+      headers:
+        Authorization: "Bearer ${UNIFY_API_KEY}"
+      addParams:
+        thinking:
+          type: "enabled"
+          budget_tokens: 8191
+        max_tokens: 8192
+
+    # O1 - High
+    - name: "O1 High"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      iconURL: "/images/notchatgpt.png"
+      models:
+        fetch: false
+        default: ["o1@openai"]
+      modelDisplayLabel: "O1 High"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+      headers:
+        Authorization: "Bearer ${UNIFY_API_KEY}"
+      addParams:
+        reasoning_effort: "high"
+
+    # O1 - Medium
+    - name: "O1 Medium"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      iconURL: "/images/notchatgpt.png"
+      models:
+        fetch: false
+        default: ["o1@openai"]
+      modelDisplayLabel: "O1 Medium"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+      headers:
+        Authorization: "Bearer ${UNIFY_API_KEY}"
+      addParams:
+        reasoning_effort: "medium"
+
+    # O1 - Low
+    - name: "O1 Low"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      iconURL: "/images/notchatgpt.png"
+      models:
+        fetch: false
+        default: ["o1@openai"]
+      modelDisplayLabel: "O1 Low"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+      headers:
+        Authorization: "Bearer ${UNIFY_API_KEY}"
+      addParams:
+        reasoning_effort: "low"
+
+    # O3-Mini - High
+    - name: "O3-Mini High"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      iconURL: "/images/notchatgpt.png"
+      models:
+        fetch: false
+        default: ["o3-mini@openai"]
+      modelDisplayLabel: "O3-Mini High"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+      headers:
+        Authorization: "Bearer ${UNIFY_API_KEY}"
+      addParams:
+        reasoning_effort: "high"
+
+    # O3-Mini - Medium
+    - name: "O3-Mini Medium"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      iconURL: "/images/notchatgpt.png"
+      models:
+        fetch: false
+        default: ["o3-mini@openai"]
+      modelDisplayLabel: "O3-Mini Medium"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+      headers:
+        Authorization: "Bearer ${UNIFY_API_KEY}"
+      addParams:
+        reasoning_effort: "medium"
+
+    # O3-Mini - Low
+    - name: "O3-Mini Low"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      iconURL: "/images/notchatgpt.png"
+      models:
+        fetch: false
+        default: ["o3-mini@openai"]
+      modelDisplayLabel: "O3-Mini Low"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+      headers:
+        Authorization: "Bearer ${UNIFY_API_KEY}"
+      addParams:
+        reasoning_effort: "low"
+
+    # O1-Mini
+    - name: "O1-Mini"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      iconURL: "/images/notchatgpt.png"
+      models:
+        fetch: false
+        default: ["o1-mini@openai"]
+      modelDisplayLabel: "O1-Mini"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+      headers:
+        Authorization: "Bearer ${UNIFY_API_KEY}"
+
+    # ChatGPT-4o Latest
+    - name: "ChatGPT-4o Latest"
+      apiKey: "${UNIFY_API_KEY}"
+      baseURL: "https://api.unify.ai/v0"
+      iconURL: "/images/notchatgpt.png"
+      models:
+        fetch: false
+        default: ["chatgpt-4o-latest@openai"]
+      modelDisplayLabel: "ChatGPT-4o Latest"
+      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
+      headers:
+        Authorization: "Bearer ${UNIFY_API_KEY}"
