@@ -4,7 +4,7 @@ endpoints:
     # Claude 3.7 Sonnet - Regular
     - name: "Claude 3.7 Sonnet"
       apiKey: "${UNIFY_API_KEY}"
-      baseURL: "https://api.unify.ai/v0"
+      baseURL: "https://api.unify.ai/v0/chat/completions"
       models:
         fetch: false
         default: ["claude-3.7-sonnet@anthropic"]
