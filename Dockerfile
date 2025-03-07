@@ -1,41 +1,21 @@
-# v0.7.7
+FROM node:20-bullseye-slim
 
-# Base node image
-FROM node:20-alpine AS node
-
-RUN apk --no-cache add curl
-
-RUN mkdir -p /app && chown node:node /app
 WORKDIR /app
 
-USER node
+# Copy package files
+COPY package*.json ./
+COPY bun.lockb ./
 
-COPY --chown=node:node . .
+# Copy source code and configuration
+COPY . .
+COPY librechat.yaml /app/librechat.yaml   # Add this line
 
-RUN \
-    # Allow mounting of these files, which have no default
-    touch .env ; \
-    # Create directories for the volumes to inherit the correct permissions
-    mkdir -p /app/client/public/images /app/api/logs ; \
-    npm config set fetch-retry-maxtimeout 600000 ; \
-    npm config set fetch-retries 5 ; \
-    npm config set fetch-retry-mintimeout 15000 ; \
-    npm install --no-audit; \
-    # React client build
-    NODE_OPTIONS="--max-old-space-size=2048" npm run frontend; \
-    npm prune --production; \
-    npm cache clean --force
+# Install dependencies and build
+RUN npm install
+RUN npm run build
 
-RUN mkdir -p /app/client/public/images /app/api/logs
-
-# Node API setup
+# Expose port
 EXPOSE 3080
-ENV HOST=0.0.0.0
-CMD ["npm", "run", "backend"]
 
-# Optional: for client with nginx routing
-# FROM nginx:stable-alpine AS nginx-client
-# WORKDIR /usr/share/nginx/html
-# COPY --from=node /app/client/dist /usr/share/nginx/html
-# COPY client/nginx.conf /etc/nginx/conf.d/default.conf
-# ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# Start the server
+CMD ["npm", "run", "backend"]
