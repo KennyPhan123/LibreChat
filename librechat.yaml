@@ -3,7 +3,7 @@ endpoints:
   custom:
     - name: "O1 High"
       apiKey: "${UNIFY_API_KEY}"
-      baseURL: "https://api.unify.ai/v0"  # Changed this
+      baseURL: "https://api.unify.ai/v0"
       models:
         fetch: false
         default: ["o1@openai"]
@@ -14,7 +14,7 @@ endpoints:
 
     - name: "O3-Mini High"
       apiKey: "${UNIFY_API_KEY}"
-      baseURL: "https://api.unify.ai/v0"  # Changed this
+      baseURL: "https://api.unify.ai/v0" 
       models:
         fetch: false
         default: ["o3-mini@openai"]
