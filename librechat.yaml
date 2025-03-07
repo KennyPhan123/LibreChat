@@ -1,24 +1,11 @@
 version: 1.0.0
 endpoints:
   custom:
-    - name: "O1 High"
+    - name: "Unify"
       apiKey: "${UNIFY_API_KEY}"
       baseURL: "https://api.unify.ai/v0"
       models:
-        fetch: false
-        default: ["o1@openai"]
-      modelDisplayLabel: "O1 High"
+        fetch: true
+        default: ["o1@openai", "o3-mini@openai"]
+      modelDisplayLabel: "Unify"
       dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
-      addParams:
-        reasoning_effort: "high"
-
-    - name: "O3-Mini High"
-      apiKey: "${UNIFY_API_KEY}"
-      baseURL: "https://api.unify.ai/v0" 
-      models:
-        fetch: false
-        default: ["o3-mini@openai"]
-      modelDisplayLabel: "O3-Mini High"
-      dropParams: ["stop", "user", "frequency_penalty", "presence_penalty"]
-      addParams:
-        reasoning_effort: "high"
