@@ -5,7 +5,6 @@ endpoints:
     - name: "Claude 3.7 Sonnet"
       apiKey: "${UNIFY_API_KEY}"
       baseURL: "https://api.unify.ai/v0"
-      iconURL: "/images/notchatgpt.png"
       models:
         fetch: false
         default: ["claude-3.7-sonnet@anthropic"]
